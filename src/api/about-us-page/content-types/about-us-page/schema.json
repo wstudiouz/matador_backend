@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "aboutUsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hero.hero",
+      "required": true
+    },
+    "topSection": {
+      "displayName": "aboutUsTopSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-top-section.about-us-top-section",
+      "required": true
+    },
+    "statisticSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "statistic-item.statistic-item",
+      "required": true,
+      "max": 4,
+      "min": 4
+    },
+    "clientsSection": {
+      "displayName": "clientsSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "clients-section.clients-section",
+      "required": true
+    },
+    "officeSection": {
+      "displayName": "officeSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "office-section.office-section",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "teamSection": {
+      "displayName": "teamSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "team-section.team-section"
+    }
+  }
+}

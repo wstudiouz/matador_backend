@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_studio_section_studio_sections",
+  "info": {
+    "displayName": "studioSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bottomImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "single-image.single-image",
+      "required": true,
+      "max": 3,
+      "min": 3
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

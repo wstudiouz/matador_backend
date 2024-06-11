@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_team_section_team_sections",
+  "info": {
+    "displayName": "teamSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "team structure"
+    },
+    "teamMembers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "team-card.team-card",
+      "required": true,
+      "min": 1
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_office_section_office_sections",
+  "info": {
+    "displayName": "officeSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "our offices",
+      "required": true
+    },
+    "leftCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "office-card.office-card",
+      "required": true
+    },
+    "rightCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "office-card.office-card",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_about_us_top_section_about_us_top_sections",
+  "info": {
+    "displayName": "aboutUsTopSection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionText": {
+      "type": "string",
+      "required": true,
+      "default": "about us"
+    },
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "descriptionRight": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

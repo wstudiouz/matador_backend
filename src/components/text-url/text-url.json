@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_text_url_text_urls",
+  "info": {
+    "displayName": "textUrl",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

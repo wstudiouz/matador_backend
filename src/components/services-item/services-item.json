@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_services_item_services_items",
+  "info": {
+    "displayName": "servicesItem"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "btnText": {
+      "type": "string",
+      "required": true
+    },
+    "bntUrl": {
+      "type": "string",
+      "required": true
+    },
+    "topImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "bottomImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
