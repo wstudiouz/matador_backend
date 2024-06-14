@@ -25,6 +25,13 @@
       "repeatable": false,
       "component": "home-section.home-section",
       "required": true
+    },
+    "recentProjects": {
+      "displayName": "recentProjects",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page-recent-projects.recent-projects",
+      "required": true
     }
   }
 }

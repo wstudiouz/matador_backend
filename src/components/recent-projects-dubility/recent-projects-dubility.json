@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_recent_projects_dubility_recent_projects_dubilities",
+  "info": {
+    "displayName": "recentProjectsDubility"
+  },
+  "options": {},
+  "attributes": {
+    "firstProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "secondProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  }
+}

@@ -590,6 +590,45 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginSlugifySlug extends Schema.CollectionType {
+  collectionName: 'slugs';
+  info: {
+    singularName: 'slug';
+    pluralName: 'slugs';
+    displayName: 'slug';
+  };
+  options: {
+    draftAndPublish: false;
+    comment: '';
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    slug: Attribute.Text;
+    count: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::slugify.slug',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::slugify.slug',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginI18NLocale extends Schema.CollectionType {
   collectionName: 'i18n_locale';
   info: {
@@ -853,6 +892,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     text: Attribute.String & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
+    projects: Attribute.Relation<
+      'api::category.category',
+      'manyToMany',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -918,6 +962,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Required;
     section: Attribute.Component<'home-section.home-section'> &
       Attribute.Required;
+    recentProjects: Attribute.Component<'home-page-recent-projects.recent-projects'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -929,6 +975,59 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'project';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    topMedia: Attribute.DynamicZone<
+      [
+        'project-top-media.top-media',
+        'top-media-video.top-media-video',
+        'top-media-carousel.top-media-carousel'
+      ]
+    > &
+      Attribute.Required;
+    about: Attribute.Component<'project-about.about'> & Attribute.Required;
+    categories: Attribute.Relation<
+      'api::project.project',
+      'manyToMany',
+      'api::category.category'
+    >;
+    afterBefore: Attribute.Component<'project-after-befor.after-befor'> &
+      Attribute.Required;
+    video: Attribute.Component<'project-video.video'> & Attribute.Required;
+    images: Attribute.Component<'project-images.images'> & Attribute.Required;
+    backstage: Attribute.Component<'project-back-stage.backstage'> &
+      Attribute.Required;
+    slug: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
       'oneToOne',
       'admin::user'
     > &
@@ -989,6 +1088,7 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::slugify.slug': PluginSlugifySlug;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
@@ -997,6 +1097,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::project.project': ApiProjectProject;
       'api::service-page.service-page': ApiServicePageServicePage;
     }
   }

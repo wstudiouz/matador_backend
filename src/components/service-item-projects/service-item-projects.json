@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_service_item_projects_service_item_projects",
+  "info": {
+    "displayName": "serviceItemProjects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "only-texts.text",
+      "required": true
+    }
+  }
+}

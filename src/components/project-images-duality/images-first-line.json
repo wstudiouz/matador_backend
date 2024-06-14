@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_project_images_duality_images_first_lines",
+  "info": {
+    "displayName": "imagesFirstLine"
+  },
+  "options": {},
+  "attributes": {
+    "firstImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "secondImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

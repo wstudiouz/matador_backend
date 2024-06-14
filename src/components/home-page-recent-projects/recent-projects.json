@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_page_recent_projects_recent_projects",
+  "info": {
+    "displayName": "recentProjects",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "projects": {
+      "displayName": "projects",
+      "type": "component",
+      "repeatable": false,
+      "component": "ccte.images"
+    }
+  }
+}

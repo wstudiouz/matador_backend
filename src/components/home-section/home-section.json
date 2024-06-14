@@ -10,12 +10,16 @@
       "type": "text",
       "required": true
     },
-    "yearInfo": {
-      "type": "text",
+    "firstAttribute": {
+      "type": "component",
+      "repeatable": false,
+      "component": "project-about-attributes.attributes",
       "required": true
     },
-    "year": {
-      "type": "string",
+    "secondAttribute": {
+      "type": "component",
+      "repeatable": false,
+      "component": "project-about-attributes.attributes",
       "required": true
     }
   }

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_project_images_four_some_first_lines",
+  "info": {
+    "displayName": "firstLine",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "firstProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "secondProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "thirdProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "fourthProject": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    }
+  }
+}

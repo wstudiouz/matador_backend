@@ -10,11 +10,11 @@
       "type": "string",
       "required": true
     },
-    "item": {
-      "displayName": "servicesItem",
+    "items": {
+      "displayName": "items",
       "type": "component",
       "repeatable": false,
-      "component": "services-item.services-item",
+      "component": "accordion-item.accordion-item",
       "required": true
     }
   }

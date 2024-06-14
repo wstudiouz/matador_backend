@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_project_about_attributes_attributes",
+  "info": {
+    "displayName": "attributes"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

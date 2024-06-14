@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_accordion_item_accordion_items",
+  "info": {
+    "displayName": "accordionItem"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "accordionItemProjects": {
+      "displayName": "accordionItemProjects",
+      "type": "component",
+      "repeatable": false,
+      "component": "accordion-item-projects.accordion-item-projects",
+      "required": true
+    },
+    "btnText": {
+      "type": "string"
+    },
+    "btnUrl": {
+      "type": "string"
+    },
+    "topImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "bottomImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

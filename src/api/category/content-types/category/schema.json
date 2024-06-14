@@ -19,6 +19,12 @@
     "slug": {
       "type": "string",
       "required": true
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "categories"
     }
   }
 }

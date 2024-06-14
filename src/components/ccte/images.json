@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_ccte_images",
+  "info": {
+    "displayName": "images"
+  },
+  "options": {},
+  "attributes": {
+    "firstLine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "project-images-four-some.first-line"
+    },
+    "secondLine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "recent-projects-dubility.recent-projects-dubility",
+      "required": true
+    },
+    "thirdLine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "project-images-four-some.first-line",
+      "required": true
+    },
+    "fourthLine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "recent-projects-dubility.recent-projects-dubility",
+      "required": true
+    }
+  }
+}

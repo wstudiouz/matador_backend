@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_project_after_befor_after_befors",
+  "info": {
+    "displayName": "afterBefor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "afterImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "beforeImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "info": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
