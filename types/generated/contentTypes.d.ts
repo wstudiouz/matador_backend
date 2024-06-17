@@ -915,6 +915,41 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email;
+    address: Attribute.Component<'address.address'> & Attribute.Required;
+    secondAddress: Attribute.Component<'address.address'> & Attribute.Required;
+    socialLinks: Attribute.Component<'text-url.text-url', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Schema.SingleType {
   collectionName: 'headers';
   info: {
@@ -1003,7 +1038,14 @@ export interface ApiProjectProject extends Schema.CollectionType {
         'top-media-carousel.top-media-carousel'
       ]
     > &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 1;
+        },
+        number
+      >;
     about: Attribute.Component<'project-about.about'> & Attribute.Required;
     categories: Attribute.Relation<
       'api::project.project',
@@ -1017,6 +1059,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     backstage: Attribute.Component<'project-back-stage.backstage'> &
       Attribute.Required;
     slug: Attribute.String & Attribute.Unique;
+    bottomMailto: Attribute.Component<'mail-to.mailto'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1095,6 +1138,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::category.category': ApiCategoryCategory;
+      'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::project.project': ApiProjectProject;

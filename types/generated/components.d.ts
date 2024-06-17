@@ -45,6 +45,17 @@ export interface AccordionItemAccordionItem extends Schema.Component {
   };
 }
 
+export interface AddressAddress extends Schema.Component {
+  collectionName: 'components_address_addresses';
+  info: {
+    displayName: 'address';
+  };
+  attributes: {
+    address: Attribute.String & Attribute.Required;
+    info: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface CategoryCategory extends Schema.Component {
   collectionName: 'components_category_categories';
   info: {
@@ -148,6 +159,17 @@ export interface HomeSectionHomeSection extends Schema.Component {
       Attribute.Required;
     secondAttribute: Attribute.Component<'project-about-attributes.attributes'> &
       Attribute.Required;
+  };
+}
+
+export interface MailToMailto extends Schema.Component {
+  collectionName: 'components_mail_to_mailtos';
+  info: {
+    displayName: 'mailto';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
   };
 }
 
@@ -498,6 +520,7 @@ declare module '@strapi/types' {
       'about-us-top-section.about-us-top-section': AboutUsTopSectionAboutUsTopSection;
       'accordion-item-projects.accordion-item-projects': AccordionItemProjectsAccordionItemProjects;
       'accordion-item.accordion-item': AccordionItemAccordionItem;
+      'address.address': AddressAddress;
       'category.category': CategoryCategory;
       'ccte.images': CcteImages;
       'client.client': ClientClient;
@@ -506,6 +529,7 @@ declare module '@strapi/types' {
       'home-page-hero.home-page-hero': HomePageHeroHomePageHero;
       'home-page-recent-projects.recent-projects': HomePageRecentProjectsRecentProjects;
       'home-section.home-section': HomeSectionHomeSection;
+      'mail-to.mailto': MailToMailto;
       'office-card.office-card': OfficeCardOfficeCard;
       'office-section.office-section': OfficeSectionOfficeSection;
       'only-texts.text': OnlyTextsText;

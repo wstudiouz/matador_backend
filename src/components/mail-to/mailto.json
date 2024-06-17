@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_mail_to_mailtos",
+  "info": {
+    "displayName": "mailto"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}
