@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_project_video_sections",
+  "info": {
+    "displayName": "videoSection"
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "leftDescription": {
+      "type": "text"
+    },
+    "rightDescription": {
+      "type": "text"
+    }
+  }
+}

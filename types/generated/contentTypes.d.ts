@@ -833,33 +833,18 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
     singularName: 'about-us-page';
     pluralName: 'about-us-pages';
     displayName: 'aboutUsPage';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    hero: Attribute.Component<'hero.hero'> & Attribute.Required;
-    topSection: Attribute.Component<'about-us-top-section.about-us-top-section'> &
-      Attribute.Required;
-    statisticSection: Attribute.Component<
-      'statistic-item.statistic-item',
-      true
-    > &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 4;
-          max: 4;
-        },
-        number
-      >;
-    clientsSection: Attribute.Component<'clients-section.clients-section'> &
-      Attribute.Required;
-    officeSection: Attribute.Component<'office-section.office-section'> &
-      Attribute.Required;
+    hero: Attribute.Component<'about-us-page.hero'>;
+    topSection: Attribute.Component<'about-us-page.top-section'>;
+    statisticSection: Attribute.Component<'about-us-page.statistic-card', true>;
+    clientSection: Attribute.Component<'about-us-page.client-section'>;
+    officeSection: Attribute.Component<'about-us-page.office-section'>;
     image: Attribute.Media<'images'> & Attribute.Required;
-    teamSection: Attribute.Component<'team-section.team-section'>;
+    teamSection: Attribute.Component<'about-us-page.team-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -890,11 +875,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    text: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
-    projects: Attribute.Relation<
+    project: Attribute.Relation<
       'api::category.category',
-      'manyToMany',
+      'manyToOne',
       'api::project.project'
     >;
     createdAt: Attribute.DateTime;
@@ -921,16 +906,15 @@ export interface ApiFooterFooter extends Schema.SingleType {
     singularName: 'footer';
     pluralName: 'footers';
     displayName: 'footer';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    email: Attribute.Email;
-    address: Attribute.Component<'address.address'> & Attribute.Required;
-    secondAddress: Attribute.Component<'address.address'> & Attribute.Required;
-    socialLinks: Attribute.Component<'text-url.text-url', true> &
+    email: Attribute.Email & Attribute.Required;
+    leftAddress: Attribute.Component<'footer.address'> & Attribute.Required;
+    rightAddress: Attribute.Component<'footer.address'> & Attribute.Required;
+    socialLinks: Attribute.Component<'footer.social-link', true> &
       Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -956,13 +940,12 @@ export interface ApiHeaderHeader extends Schema.SingleType {
     singularName: 'header';
     pluralName: 'headers';
     displayName: 'header';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    navUrl: Attribute.Component<'text-url.text-url'> & Attribute.Required;
+    navUrl: Attribute.Component<'footer.social-link'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -987,18 +970,14 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     singularName: 'home-page';
     pluralName: 'home-pages';
     displayName: 'homePage';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    hero: Attribute.Component<'home-page-hero.home-page-hero'> &
-      Attribute.Required;
-    section: Attribute.Component<'home-section.home-section'> &
-      Attribute.Required;
-    recentProjects: Attribute.Component<'home-page-recent-projects.recent-projects'> &
-      Attribute.Required;
+    hero: Attribute.Component<'home-page.hero'> & Attribute.Required;
+    section: Attribute.Component<'home-page.section'> & Attribute.Required;
+    recentProjects: Attribute.Component<'home-page.recent-projects'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1029,14 +1008,16 @@ export interface ApiProjectProject extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
+    title: Attribute.String;
+    slug: Attribute.String;
+    categories: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::category.category'
+    >;
+    thumbnail: Attribute.Media<'images'> & Attribute.Required;
     topMedia: Attribute.DynamicZone<
-      [
-        'project-top-media.top-media',
-        'top-media-video.top-media-video',
-        'top-media-carousel.top-media-carousel'
-      ]
+      ['project.top-media', 'project.video', 'project.carousel']
     > &
       Attribute.Required &
       Attribute.SetMinMax<
@@ -1046,20 +1027,13 @@ export interface ApiProjectProject extends Schema.CollectionType {
         },
         number
       >;
-    about: Attribute.Component<'project-about.about'> & Attribute.Required;
-    categories: Attribute.Relation<
-      'api::project.project',
-      'manyToMany',
-      'api::category.category'
-    >;
-    afterBefore: Attribute.Component<'project-after-befor.after-befor'> &
+    aboutSection: Attribute.Component<'project.about-section'>;
+    afterBefore: Attribute.Component<'project.after-before'> &
       Attribute.Required;
-    video: Attribute.Component<'project-video.video'> & Attribute.Required;
-    images: Attribute.Component<'project-images.images'> & Attribute.Required;
-    backstage: Attribute.Component<'project-back-stage.backstage'> &
-      Attribute.Required;
-    slug: Attribute.String & Attribute.Unique;
-    bottomMailto: Attribute.Component<'mail-to.mailto'> & Attribute.Required;
+    videoSection: Attribute.Component<'project.video-section'>;
+    imagesSection: Attribute.Component<'project.images-section'>;
+    backStageSection: Attribute.Component<'project.back-stage-section'>;
+    bottomMailTo: Attribute.Component<'project.bottom-mail-to'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1083,22 +1057,17 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
   info: {
     singularName: 'service-page';
     pluralName: 'service-pages';
-    displayName: 'ServicePage';
-    description: '';
+    displayName: 'servicePage';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    hero: Attribute.Component<'hero.hero'> & Attribute.Required;
-    topSection: Attribute.Component<'top-section-services.top-section-services'> &
-      Attribute.Required;
-    services: Attribute.Component<'services.service-item', true> &
-      Attribute.Required;
-    studioSection: Attribute.Component<'studio-section.studio-section'> &
-      Attribute.Required;
-    innovationSection: Attribute.Component<'studio-section.studio-section'> &
-      Attribute.Required;
+    hero: Attribute.Component<'about-us-page.hero'>;
+    topSection: Attribute.Component<'service-page.top-section'>;
+    services: Attribute.Component<'service-page.services', true>;
+    studioSection: Attribute.Component<'service-page.studio-section'>;
+    innovationSection: Attribute.Component<'service-page.studio-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

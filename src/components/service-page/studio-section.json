@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_service_page_studio_sections",
+  "info": {
+    "displayName": "studioSection"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bottomImages": {
+      "displayName": "image",
+      "type": "component",
+      "repeatable": true,
+      "component": "service-page.image",
+      "max": 3,
+      "min": 3
+    }
+  }
+}

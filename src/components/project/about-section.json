@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_project_about_sections",
+  "info": {
+    "displayName": "aboutSection"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "attributes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-page.attribute"
+    }
+  }
+}

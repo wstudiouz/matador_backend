@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_page_sections",
+  "info": {
+    "displayName": "section"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "projectsNumber": {
+      "displayName": "attribute",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.attribute",
+      "required": true
+    },
+    "experience": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.attribute"
+    }
+  }
+}

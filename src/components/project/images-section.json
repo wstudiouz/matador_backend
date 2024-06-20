@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_project_images_sections",
+  "info": {
+    "displayName": "imagesSection"
+  },
+  "options": {},
+  "attributes": {
+    "firstLine": {
+      "displayName": "firstLine",
+      "type": "component",
+      "repeatable": false,
+      "component": "project.first-line"
+    },
+    "secondLine": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "thirdLine": {
+      "type": "component",
+      "repeatable": false,
+      "component": "project.first-line"
+    }
+  }
+}

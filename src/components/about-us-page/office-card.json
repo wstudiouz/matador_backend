@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_us_page_office_cards",
+  "info": {
+    "displayName": "officeCard"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "info": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

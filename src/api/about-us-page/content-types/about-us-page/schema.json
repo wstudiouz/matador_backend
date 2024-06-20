@@ -4,8 +4,7 @@
   "info": {
     "singularName": "about-us-page",
     "pluralName": "about-us-pages",
-    "displayName": "aboutUsPage",
-    "description": ""
+    "displayName": "aboutUsPage"
   },
   "options": {
     "draftAndPublish": true
@@ -13,53 +12,48 @@
   "pluginOptions": {},
   "attributes": {
     "hero": {
+      "displayName": "hero",
       "type": "component",
       "repeatable": false,
-      "component": "hero.hero",
-      "required": true
+      "component": "about-us-page.hero"
     },
     "topSection": {
-      "displayName": "aboutUsTopSection",
+      "displayName": "topSection",
       "type": "component",
       "repeatable": false,
-      "component": "about-us-top-section.about-us-top-section",
-      "required": true
+      "component": "about-us-page.top-section"
     },
     "statisticSection": {
+      "displayName": "statisticCard",
       "type": "component",
       "repeatable": true,
-      "component": "statistic-item.statistic-item",
-      "required": true,
-      "max": 4,
-      "min": 4
+      "component": "about-us-page.statistic-card"
     },
-    "clientsSection": {
-      "displayName": "clientsSection",
+    "clientSection": {
+      "displayName": "clientSection",
       "type": "component",
       "repeatable": false,
-      "component": "clients-section.clients-section",
-      "required": true
+      "component": "about-us-page.client-section"
     },
     "officeSection": {
       "displayName": "officeSection",
       "type": "component",
       "repeatable": false,
-      "component": "office-section.office-section",
-      "required": true
+      "component": "about-us-page.office-section"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "teamSection": {
       "displayName": "teamSection",
       "type": "component",
       "repeatable": false,
-      "component": "team-section.team-section"
+      "component": "about-us-page.team-section"
     }
   }
 }

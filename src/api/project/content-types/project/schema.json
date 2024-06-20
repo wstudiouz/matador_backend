@@ -13,10 +13,18 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
-    "image": {
+    "slug": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "project"
+    },
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -27,66 +35,50 @@
     "topMedia": {
       "type": "dynamiczone",
       "components": [
-        "project-top-media.top-media",
-        "top-media-video.top-media-video",
-        "top-media-carousel.top-media-carousel"
+        "project.top-media",
+        "project.video",
+        "project.carousel"
       ],
       "required": true,
       "min": 1,
       "max": 1
     },
-    "about": {
-      "displayName": "about",
+    "aboutSection": {
+      "displayName": "aboutSection",
       "type": "component",
       "repeatable": false,
-      "component": "project-about.about",
-      "required": true
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "projects"
+      "component": "project.about-section"
     },
     "afterBefore": {
-      "displayName": "afterBefor",
+      "displayName": "afterBefore",
       "type": "component",
       "repeatable": false,
-      "component": "project-after-befor.after-befor",
+      "component": "project.after-before",
       "required": true
     },
-    "video": {
-      "displayName": "video",
+    "videoSection": {
+      "displayName": "videoSection",
       "type": "component",
       "repeatable": false,
-      "component": "project-video.video",
-      "required": true
+      "component": "project.video-section"
     },
-    "images": {
-      "displayName": "images",
+    "imagesSection": {
+      "displayName": "imagesSection",
       "type": "component",
       "repeatable": false,
-      "component": "project-images.images",
-      "required": true
+      "component": "project.images-section"
     },
-    "backstage": {
-      "displayName": "backstage",
+    "backStageSection": {
+      "displayName": "backStageSection",
       "type": "component",
       "repeatable": false,
-      "component": "project-back-stage.backstage",
-      "required": true
+      "component": "project.back-stage-section"
     },
-    "slug": {
-      "type": "string",
-      "required": false,
-      "unique": true
-    },
-    "bottomMailto": {
-      "displayName": "mailto",
+    "bottomMailTo": {
+      "displayName": "bottomMailTo",
       "type": "component",
       "repeatable": false,
-      "component": "mail-to.mailto",
-      "required": true
+      "component": "project.bottom-mail-to"
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_us_page_office_sections",
+  "info": {
+    "displayName": "officeSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "leftCard": {
+      "displayName": "officeCard",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-page.office-card",
+      "required": true
+    },
+    "rightCard": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us-page.office-card"
+    }
+  }
+}

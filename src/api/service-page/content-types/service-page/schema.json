@@ -4,8 +4,7 @@
   "info": {
     "singularName": "service-page",
     "pluralName": "service-pages",
-    "displayName": "ServicePage",
-    "description": ""
+    "displayName": "servicePage"
   },
   "options": {
     "draftAndPublish": true
@@ -13,38 +12,32 @@
   "pluginOptions": {},
   "attributes": {
     "hero": {
-      "displayName": "hero",
       "type": "component",
       "repeatable": false,
-      "component": "hero.hero",
-      "required": true
+      "component": "about-us-page.hero"
     },
     "topSection": {
-      "displayName": "topSectionServices",
+      "displayName": "topSection",
       "type": "component",
       "repeatable": false,
-      "component": "top-section-services.top-section-services",
-      "required": true
+      "component": "service-page.top-section"
     },
     "services": {
-      "displayName": "serviceItem",
+      "displayName": "services",
       "type": "component",
       "repeatable": true,
-      "component": "services.service-item",
-      "required": true
+      "component": "service-page.services"
     },
     "studioSection": {
       "displayName": "studioSection",
       "type": "component",
       "repeatable": false,
-      "component": "studio-section.studio-section",
-      "required": true
+      "component": "service-page.studio-section"
     },
     "innovationSection": {
       "type": "component",
       "repeatable": false,
-      "component": "studio-section.studio-section",
-      "required": true
+      "component": "service-page.studio-section"
     }
   }
 }

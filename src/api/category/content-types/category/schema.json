@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "text": {
+    "name": {
       "type": "string",
       "required": true
     },
@@ -20,11 +20,11 @@
       "type": "string",
       "required": true
     },
-    "projects": {
+    "project": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::project.project",
-      "mappedBy": "categories"
+      "inversedBy": "categories"
     }
   }
 }

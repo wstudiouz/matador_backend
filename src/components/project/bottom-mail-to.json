@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_project_bottom_mail_tos",
+  "info": {
+    "displayName": "bottomMailTo"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

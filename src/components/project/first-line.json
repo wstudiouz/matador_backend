@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_project_first_lines",
+  "info": {
+    "displayName": "firstLine"
+  },
+  "options": {},
+  "attributes": {
+    "firstImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "secondImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

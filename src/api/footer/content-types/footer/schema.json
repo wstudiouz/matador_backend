@@ -4,8 +4,7 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "footer",
-    "description": ""
+    "displayName": "footer"
   },
   "options": {
     "draftAndPublish": true
@@ -13,25 +12,27 @@
   "pluginOptions": {},
   "attributes": {
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true
     },
-    "address": {
+    "leftAddress": {
       "displayName": "address",
       "type": "component",
       "repeatable": false,
-      "component": "address.address",
+      "component": "footer.address",
       "required": true
     },
-    "secondAddress": {
+    "rightAddress": {
       "type": "component",
       "repeatable": false,
-      "component": "address.address",
+      "component": "footer.address",
       "required": true
     },
     "socialLinks": {
+      "displayName": "socialLink",
       "type": "component",
       "repeatable": true,
-      "component": "text-url.text-url",
+      "component": "footer.social-link",
       "required": true
     }
   }

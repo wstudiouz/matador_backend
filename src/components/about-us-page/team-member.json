@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_us_page_team_members",
+  "info": {
+    "displayName": "teamMember"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    }
+  }
+}

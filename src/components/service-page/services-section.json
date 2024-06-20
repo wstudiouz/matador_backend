@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_service_page_services_sections",
+  "info": {
+    "displayName": "servicesSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

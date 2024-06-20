@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_project_top_medias",
+  "info": {
+    "displayName": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

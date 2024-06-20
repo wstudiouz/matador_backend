@@ -1,87 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface AboutUsTopSectionAboutUsTopSection extends Schema.Component {
-  collectionName: 'components_about_us_top_section_about_us_top_sections';
+export interface AboutUsPageClientSection extends Schema.Component {
+  collectionName: 'components_about_us_page_client_sections';
   info: {
-    displayName: 'aboutUsTopSection';
-  };
-  attributes: {
-    sectionText: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'about us'>;
-    title: Attribute.Text & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    descriptionRight: Attribute.Text & Attribute.Required;
-    image: Attribute.Media<'images'> & Attribute.Required;
-  };
-}
-
-export interface AccordionItemProjectsAccordionItemProjects
-  extends Schema.Component {
-  collectionName: 'components_accordion_item_projects_accordion_item_projects';
-  info: {
-    displayName: 'accordionItemProjects';
+    displayName: 'clientSection';
   };
   attributes: {
     title: Attribute.String;
-    projectstitle: Attribute.Component<'only-texts.text', true>;
+    clients: Attribute.Component<'about-us-page.client', true>;
   };
 }
 
-export interface AccordionItemAccordionItem extends Schema.Component {
-  collectionName: 'components_accordion_item_accordion_items';
-  info: {
-    displayName: 'accordionItem';
-  };
-  attributes: {
-    text: Attribute.String;
-    description: Attribute.Text;
-    accordionItemProjects: Attribute.Component<'accordion-item-projects.accordion-item-projects'> &
-      Attribute.Required;
-    btnText: Attribute.String;
-    btnUrl: Attribute.String;
-    topImg: Attribute.Media<'images'> & Attribute.Required;
-    bottomImg: Attribute.Media<'images'> & Attribute.Required;
-  };
-}
-
-export interface AddressAddress extends Schema.Component {
-  collectionName: 'components_address_addresses';
-  info: {
-    displayName: 'address';
-  };
-  attributes: {
-    address: Attribute.String & Attribute.Required;
-    info: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface CategoryCategory extends Schema.Component {
-  collectionName: 'components_category_categories';
-  info: {
-    displayName: 'category';
-  };
-  attributes: {};
-}
-
-export interface CcteImages extends Schema.Component {
-  collectionName: 'components_ccte_images';
-  info: {
-    displayName: 'images';
-  };
-  attributes: {
-    firstLine: Attribute.Component<'project-images-four-some.first-line'>;
-    secondLine: Attribute.Component<'recent-projects-dubility.recent-projects-dubility'> &
-      Attribute.Required;
-    thirdLine: Attribute.Component<'project-images-four-some.first-line'> &
-      Attribute.Required;
-    fourthLine: Attribute.Component<'recent-projects-dubility.recent-projects-dubility'> &
-      Attribute.Required;
-  };
-}
-
-export interface ClientClient extends Schema.Component {
-  collectionName: 'components_client_clients';
+export interface AboutUsPageClient extends Schema.Component {
+  collectionName: 'components_about_us_page_clients';
   info: {
     displayName: 'client';
   };
@@ -90,91 +21,20 @@ export interface ClientClient extends Schema.Component {
   };
 }
 
-export interface ClientsSectionClientsSection extends Schema.Component {
-  collectionName: 'components_clients_section_clients_sections';
-  info: {
-    displayName: 'clientsSection';
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'our clients'>;
-    client: Attribute.Component<'client.client', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-  };
-}
-
-export interface HeroHero extends Schema.Component {
-  collectionName: 'components_hero_heroes';
+export interface AboutUsPageHero extends Schema.Component {
+  collectionName: 'components_about_us_page_heroes';
   info: {
     displayName: 'hero';
-    description: '';
   };
   attributes: {
-    text: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    text: Attribute.String;
+    description: Attribute.Text;
     image: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
-export interface HomePageHeroHomePageHero extends Schema.Component {
-  collectionName: 'components_home_page_hero_home_page_heroes';
-  info: {
-    displayName: 'homePageHero';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    background: Attribute.Media<'videos'> & Attribute.Required;
-  };
-}
-
-export interface HomePageRecentProjectsRecentProjects extends Schema.Component {
-  collectionName: 'components_home_page_recent_projects_recent_projects';
-  info: {
-    displayName: 'recentProjects';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    projects: Attribute.Component<'ccte.images'>;
-  };
-}
-
-export interface HomeSectionHomeSection extends Schema.Component {
-  collectionName: 'components_home_section_home_sections';
-  info: {
-    displayName: 'homeSection';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.Text & Attribute.Required;
-    firstAttribute: Attribute.Component<'project-about-attributes.attributes'> &
-      Attribute.Required;
-    secondAttribute: Attribute.Component<'project-about-attributes.attributes'> &
-      Attribute.Required;
-  };
-}
-
-export interface MailToMailto extends Schema.Component {
-  collectionName: 'components_mail_to_mailtos';
-  info: {
-    displayName: 'mailto';
-  };
-  attributes: {
-    text: Attribute.String & Attribute.Required;
-    email: Attribute.Email & Attribute.Required;
-  };
-}
-
-export interface OfficeCardOfficeCard extends Schema.Component {
-  collectionName: 'components_office_card_office_cards';
+export interface AboutUsPageOfficeCard extends Schema.Component {
+  collectionName: 'components_about_us_page_office_cards';
   info: {
     displayName: 'officeCard';
   };
@@ -186,248 +46,325 @@ export interface OfficeCardOfficeCard extends Schema.Component {
   };
 }
 
-export interface OfficeSectionOfficeSection extends Schema.Component {
-  collectionName: 'components_office_section_office_sections';
+export interface AboutUsPageOfficeSection extends Schema.Component {
+  collectionName: 'components_about_us_page_office_sections';
   info: {
     displayName: 'officeSection';
-    description: '';
   };
   attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'our offices'>;
-    leftCard: Attribute.Component<'office-card.office-card'> &
+    title: Attribute.String & Attribute.Required;
+    leftCard: Attribute.Component<'about-us-page.office-card'> &
       Attribute.Required;
-    rightCard: Attribute.Component<'office-card.office-card'> &
-      Attribute.Required;
+    rightCard: Attribute.Component<'about-us-page.office-card'>;
   };
 }
 
-export interface OnlyTextsText extends Schema.Component {
-  collectionName: 'components_text_texts';
+export interface AboutUsPageStatisticCard extends Schema.Component {
+  collectionName: 'components_about_us_page_statistic_cards';
   info: {
-    displayName: 'onlyTexts';
-    description: '';
+    displayName: 'statisticCard';
   };
   attributes: {
-    text: Attribute.String & Attribute.Required;
+    text: Attribute.String;
+    info: Attribute.Text;
   };
 }
 
-export interface ProjectAboutAttributesAttributes extends Schema.Component {
-  collectionName: 'components_project_about_attributes_attributes';
+export interface AboutUsPageTeamMember extends Schema.Component {
+  collectionName: 'components_about_us_page_team_members';
   info: {
-    displayName: 'attributes';
+    displayName: 'teamMember';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    value: Attribute.Text & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    name: Attribute.String;
+    position: Attribute.String;
   };
 }
 
-export interface ProjectAboutAbout extends Schema.Component {
-  collectionName: 'components_project_about_abouts';
+export interface AboutUsPageTeamSection extends Schema.Component {
+  collectionName: 'components_about_us_page_team_sections';
   info: {
-    displayName: 'about';
+    displayName: 'teamSection';
   };
   attributes: {
-    description: Attribute.Text & Attribute.Required;
-    attributes: Attribute.Component<
-      'project-about-attributes.attributes',
-      true
-    > &
+    title: Attribute.String;
+    teamMembers: Attribute.Component<'about-us-page.team-member', true> &
       Attribute.Required;
   };
 }
 
-export interface ProjectAfterBeforAfterBefor extends Schema.Component {
-  collectionName: 'components_project_after_befor_after_befors';
+export interface AboutUsPageTopSection extends Schema.Component {
+  collectionName: 'components_about_us_page_top_sections';
   info: {
-    displayName: 'afterBefor';
-    description: '';
+    displayName: 'topSection';
   };
   attributes: {
-    afterImg: Attribute.Media<'images'> & Attribute.Required;
-    beforeImg: Attribute.Media<'images'> & Attribute.Required;
-    text: Attribute.String & Attribute.Required;
+    sectionName: Attribute.String & Attribute.Required;
+    title: Attribute.Text;
+    leftDescription: Attribute.Text;
+    rightDescription: Attribute.Text & Attribute.Required;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface FooterAddress extends Schema.Component {
+  collectionName: 'components_footer_addresses';
+  info: {
+    displayName: 'address';
+  };
+  attributes: {
+    address: Attribute.String;
     info: Attribute.Text & Attribute.Required;
   };
 }
 
-export interface ProjectBackStageBackstage extends Schema.Component {
-  collectionName: 'components_project_back_stage_backstages';
+export interface FooterSocialLink extends Schema.Component {
+  collectionName: 'components_footer_social_links';
   info: {
-    displayName: 'backstage';
-    description: '';
+    displayName: 'socialLink';
+  };
+  attributes: {
+    text: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
+export interface HomePageAttribute extends Schema.Component {
+  collectionName: 'components_home_page_attributes';
+  info: {
+    displayName: 'attribute';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    value: Attribute.Text;
+  };
+}
+
+export interface HomePageHero extends Schema.Component {
+  collectionName: 'components_home_page_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    background: Attribute.Media<'videos'> & Attribute.Required;
+  };
+}
+
+export interface HomePageRecentProjects extends Schema.Component {
+  collectionName: 'components_home_page_recent_projects';
+  info: {
+    displayName: 'recentProjects';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface HomePageSection extends Schema.Component {
+  collectionName: 'components_home_page_sections';
+  info: {
+    displayName: 'section';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+    projectsNumber: Attribute.Component<'home-page.attribute'> &
+      Attribute.Required;
+    experience: Attribute.Component<'home-page.attribute'>;
+  };
+}
+
+export interface ProjectAboutSection extends Schema.Component {
+  collectionName: 'components_project_about_sections';
+  info: {
+    displayName: 'aboutSection';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    attributes: Attribute.Component<'home-page.attribute', true>;
+  };
+}
+
+export interface ProjectAfterBefore extends Schema.Component {
+  collectionName: 'components_project_after_befores';
+  info: {
+    displayName: 'afterBefore';
+  };
+  attributes: {
+    text: Attribute.String;
+    info: Attribute.Text;
+    afterImg: Attribute.Media<'images'> & Attribute.Required;
+    beforeImg: Attribute.Media<'images'> & Attribute.Required;
+  };
+}
+
+export interface ProjectBackStageSection extends Schema.Component {
+  collectionName: 'components_project_back_stage_sections';
+  info: {
+    displayName: 'backStageSection';
   };
   attributes: {
     images: Attribute.Media<'images', true> & Attribute.Required;
   };
 }
 
-export interface ProjectImagesDualityImagesFirstLine extends Schema.Component {
-  collectionName: 'components_project_images_duality_images_first_lines';
+export interface ProjectBottomMailTo extends Schema.Component {
+  collectionName: 'components_project_bottom_mail_tos';
   info: {
-    displayName: 'imagesFirstLine';
+    displayName: 'bottomMailTo';
   };
   attributes: {
-    firstImage: Attribute.Media<'images'> & Attribute.Required;
-    secondImage: Attribute.Media<'images'> & Attribute.Required;
+    text: Attribute.Text;
+    email: Attribute.Email;
   };
 }
 
-export interface ProjectImagesFourSomeFirstLine extends Schema.Component {
-  collectionName: 'components_project_images_four_some_first_lines';
+export interface ProjectCarousel extends Schema.Component {
+  collectionName: 'components_project_carousels';
+  info: {
+    displayName: 'carousel';
+  };
+  attributes: {
+    images: Attribute.Media<'images', true> & Attribute.Required;
+  };
+}
+
+export interface ProjectFirstLine extends Schema.Component {
+  collectionName: 'components_project_first_lines';
   info: {
     displayName: 'firstLine';
+  };
+  attributes: {
+    firstImg: Attribute.Media<'images'> & Attribute.Required;
+    secondImg: Attribute.Media<'images'> & Attribute.Required;
+  };
+}
+
+export interface ProjectImagesSection extends Schema.Component {
+  collectionName: 'components_project_images_sections';
+  info: {
+    displayName: 'imagesSection';
+  };
+  attributes: {
+    firstLine: Attribute.Component<'project.first-line'>;
+    secondLine: Attribute.Media<'images'> & Attribute.Required;
+    thirdLine: Attribute.Component<'project.first-line'>;
+  };
+}
+
+export interface ProjectTopMedia extends Schema.Component {
+  collectionName: 'components_project_top_medias';
+  info: {
+    displayName: 'image';
     description: '';
-  };
-  attributes: {
-    firstProject: Attribute.Relation<
-      'project-images-four-some.first-line',
-      'oneToOne',
-      'api::project.project'
-    >;
-    secondProject: Attribute.Relation<
-      'project-images-four-some.first-line',
-      'oneToOne',
-      'api::project.project'
-    >;
-    thirdProject: Attribute.Relation<
-      'project-images-four-some.first-line',
-      'oneToOne',
-      'api::project.project'
-    >;
-    fourthProject: Attribute.Relation<
-      'project-images-four-some.first-line',
-      'oneToOne',
-      'api::project.project'
-    >;
-  };
-}
-
-export interface ProjectImagesImages extends Schema.Component {
-  collectionName: 'components_project_images_images';
-  info: {
-    displayName: 'images';
-  };
-  attributes: {
-    imagesFirstLine: Attribute.Component<'project-images-duality.images-first-line'> &
-      Attribute.Required;
-    imagesSecondLine: Attribute.Media<'images'> & Attribute.Required;
-    imagesThirdLine: Attribute.Component<'project-images-duality.images-first-line'> &
-      Attribute.Required;
-  };
-}
-
-export interface ProjectTopMediaTopMedia extends Schema.Component {
-  collectionName: 'components_project_top_media_top_medias';
-  info: {
-    displayName: 'topMedia';
   };
   attributes: {
     image: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
-export interface ProjectVideoVideo extends Schema.Component {
-  collectionName: 'components_project_video_videos';
+export interface ProjectVideoSection extends Schema.Component {
+  collectionName: 'components_project_video_sections';
+  info: {
+    displayName: 'videoSection';
+  };
+  attributes: {
+    video: Attribute.Media<'videos'> & Attribute.Required;
+    leftDescription: Attribute.Text;
+    rightDescription: Attribute.Text;
+  };
+}
+
+export interface ProjectVideo extends Schema.Component {
+  collectionName: 'components_project_videos';
   info: {
     displayName: 'video';
   };
   attributes: {
-    description: Attribute.Text;
-    secondDescription: Attribute.Text & Attribute.Required;
     video: Attribute.Media<'videos'> & Attribute.Required;
   };
 }
 
-export interface RecentProjectsDubilityRecentProjectsDubility
-  extends Schema.Component {
-  collectionName: 'components_recent_projects_dubility_recent_projects_dubilities';
+export interface ServicePageImage extends Schema.Component {
+  collectionName: 'components_service_page_images';
   info: {
-    displayName: 'recentProjectsDubility';
-  };
-  attributes: {
-    firstProject: Attribute.Relation<
-      'recent-projects-dubility.recent-projects-dubility',
-      'oneToOne',
-      'api::project.project'
-    >;
-    secondProject: Attribute.Relation<
-      'recent-projects-dubility.recent-projects-dubility',
-      'oneToOne',
-      'api::project.project'
-    >;
-  };
-}
-
-export interface ServiceItemProjectsServiceItemProjects
-  extends Schema.Component {
-  collectionName: 'components_service_item_projects_service_item_projects';
-  info: {
-    displayName: 'serviceItemProjects';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    projects: Attribute.Component<'only-texts.text', true> & Attribute.Required;
-  };
-}
-
-export interface ServicePageAccordionItemsItems extends Schema.Component {
-  collectionName: 'components_service_page_accordion_items_items';
-  info: {
-    displayName: 'items';
-  };
-  attributes: {};
-}
-
-export interface ServicesServiceItem extends Schema.Component {
-  collectionName: 'components_service_item_service_items';
-  info: {
-    displayName: 'services';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    items: Attribute.Component<'accordion-item.accordion-item'> &
-      Attribute.Required;
-  };
-}
-
-export interface SingleImageSingleImage extends Schema.Component {
-  collectionName: 'components_single_image_single_images';
-  info: {
-    displayName: 'singleImage';
-    description: '';
+    displayName: 'image';
   };
   attributes: {
     image: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
-export interface StatisticItemStatisticItem extends Schema.Component {
-  collectionName: 'components_statistic_item_statistic_items';
+export interface ServicePageProjectNames extends Schema.Component {
+  collectionName: 'components_service_page_project_names';
   info: {
-    displayName: 'statisticItem';
+    displayName: 'project-names';
   };
   attributes: {
-    text: Attribute.String & Attribute.Required;
-    info: Attribute.Text & Attribute.Required;
+    name: Attribute.String;
   };
 }
 
-export interface StudioSectionStudioSection extends Schema.Component {
-  collectionName: 'components_studio_section_studio_sections';
+export interface ServicePageProjects extends Schema.Component {
+  collectionName: 'components_service_page_projects';
   info: {
-    displayName: 'studioSection';
-    description: '';
+    displayName: 'projects';
   };
   attributes: {
     title: Attribute.String;
+    projectNames: Attribute.Component<'service-page.project-names', true>;
+  };
+}
+
+export interface ServicePageServiceItem extends Schema.Component {
+  collectionName: 'components_service_page_service_items';
+  info: {
+    displayName: 'serviceItem';
+  };
+  attributes: {
+    text: Attribute.Text;
     description: Attribute.Text;
-    bottomImages: Attribute.Component<'single-image.single-image', true> &
-      Attribute.Required &
+    btnText: Attribute.String;
+    email: Attribute.Email;
+    topImg: Attribute.Media<'images'> & Attribute.Required;
+    bottomImg: Attribute.Media<'images'> & Attribute.Required;
+    projects: Attribute.Component<'service-page.projects'>;
+  };
+}
+
+export interface ServicePageServicesSection extends Schema.Component {
+  collectionName: 'components_service_page_services_sections';
+  info: {
+    displayName: 'servicesSection';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface ServicePageServices extends Schema.Component {
+  collectionName: 'components_service_page_services';
+  info: {
+    displayName: 'services';
+  };
+  attributes: {
+    title: Attribute.String;
+    item: Attribute.Component<'service-page.service-item'>;
+  };
+}
+
+export interface ServicePageStudioSection extends Schema.Component {
+  collectionName: 'components_service_page_studio_sections';
+  info: {
+    displayName: 'studioSection';
+  };
+  attributes: {
+    image: Attribute.Media<'images'> & Attribute.Required;
+    title: Attribute.String;
+    description: Attribute.Text;
+    bottomImages: Attribute.Component<'service-page.image', true> &
       Attribute.SetMinMax<
         {
           min: 3;
@@ -435,126 +372,56 @@ export interface StudioSectionStudioSection extends Schema.Component {
         },
         number
       >;
-    image: Attribute.Media<'images'> & Attribute.Required;
   };
 }
 
-export interface TeamCardTeamCard extends Schema.Component {
-  collectionName: 'components_team_card_team_cards';
+export interface ServicePageTopSection extends Schema.Component {
+  collectionName: 'components_service_page_top_sections';
   info: {
-    displayName: 'teamCard';
+    displayName: 'topSection';
   };
   attributes: {
-    image: Attribute.Media<'images'> & Attribute.Required;
-    name: Attribute.String & Attribute.Required;
-    expert: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface TeamSectionTeamSection extends Schema.Component {
-  collectionName: 'components_team_section_team_sections';
-  info: {
-    displayName: 'teamSection';
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'team structure'>;
-    teamMembers: Attribute.Component<'team-card.team-card', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-  };
-}
-
-export interface TextUrlTextUrl extends Schema.Component {
-  collectionName: 'components_text_url_text_urls';
-  info: {
-    displayName: 'textUrl';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.String & Attribute.Required;
-    url: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface TopMediaCarouselTopMediaCarousel extends Schema.Component {
-  collectionName: 'components_top_media_carousel_top_media_carousels';
-  info: {
-    displayName: 'topMediaCarousel';
-  };
-  attributes: {
-    images: Attribute.Media<'images', true> & Attribute.Required;
-  };
-}
-
-export interface TopMediaVideoTopMediaVideo extends Schema.Component {
-  collectionName: 'components_top_media_video_top_media_videos';
-  info: {
-    displayName: 'topMediaVideo';
-  };
-  attributes: {
-    video: Attribute.Media<'videos'> & Attribute.Required;
-  };
-}
-
-export interface TopSectionServicesTopSectionServices extends Schema.Component {
-  collectionName: 'components_top_section_services_top_section_services';
-  info: {
-    displayName: 'topSectionServices';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    title: Attribute.Text;
+    description: Attribute.Text;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'about-us-top-section.about-us-top-section': AboutUsTopSectionAboutUsTopSection;
-      'accordion-item-projects.accordion-item-projects': AccordionItemProjectsAccordionItemProjects;
-      'accordion-item.accordion-item': AccordionItemAccordionItem;
-      'address.address': AddressAddress;
-      'category.category': CategoryCategory;
-      'ccte.images': CcteImages;
-      'client.client': ClientClient;
-      'clients-section.clients-section': ClientsSectionClientsSection;
-      'hero.hero': HeroHero;
-      'home-page-hero.home-page-hero': HomePageHeroHomePageHero;
-      'home-page-recent-projects.recent-projects': HomePageRecentProjectsRecentProjects;
-      'home-section.home-section': HomeSectionHomeSection;
-      'mail-to.mailto': MailToMailto;
-      'office-card.office-card': OfficeCardOfficeCard;
-      'office-section.office-section': OfficeSectionOfficeSection;
-      'only-texts.text': OnlyTextsText;
-      'project-about-attributes.attributes': ProjectAboutAttributesAttributes;
-      'project-about.about': ProjectAboutAbout;
-      'project-after-befor.after-befor': ProjectAfterBeforAfterBefor;
-      'project-back-stage.backstage': ProjectBackStageBackstage;
-      'project-images-duality.images-first-line': ProjectImagesDualityImagesFirstLine;
-      'project-images-four-some.first-line': ProjectImagesFourSomeFirstLine;
-      'project-images.images': ProjectImagesImages;
-      'project-top-media.top-media': ProjectTopMediaTopMedia;
-      'project-video.video': ProjectVideoVideo;
-      'recent-projects-dubility.recent-projects-dubility': RecentProjectsDubilityRecentProjectsDubility;
-      'service-item-projects.service-item-projects': ServiceItemProjectsServiceItemProjects;
-      'service-page-accordion-items.items': ServicePageAccordionItemsItems;
-      'services.service-item': ServicesServiceItem;
-      'single-image.single-image': SingleImageSingleImage;
-      'statistic-item.statistic-item': StatisticItemStatisticItem;
-      'studio-section.studio-section': StudioSectionStudioSection;
-      'team-card.team-card': TeamCardTeamCard;
-      'team-section.team-section': TeamSectionTeamSection;
-      'text-url.text-url': TextUrlTextUrl;
-      'top-media-carousel.top-media-carousel': TopMediaCarouselTopMediaCarousel;
-      'top-media-video.top-media-video': TopMediaVideoTopMediaVideo;
-      'top-section-services.top-section-services': TopSectionServicesTopSectionServices;
+      'about-us-page.client-section': AboutUsPageClientSection;
+      'about-us-page.client': AboutUsPageClient;
+      'about-us-page.hero': AboutUsPageHero;
+      'about-us-page.office-card': AboutUsPageOfficeCard;
+      'about-us-page.office-section': AboutUsPageOfficeSection;
+      'about-us-page.statistic-card': AboutUsPageStatisticCard;
+      'about-us-page.team-member': AboutUsPageTeamMember;
+      'about-us-page.team-section': AboutUsPageTeamSection;
+      'about-us-page.top-section': AboutUsPageTopSection;
+      'footer.address': FooterAddress;
+      'footer.social-link': FooterSocialLink;
+      'home-page.attribute': HomePageAttribute;
+      'home-page.hero': HomePageHero;
+      'home-page.recent-projects': HomePageRecentProjects;
+      'home-page.section': HomePageSection;
+      'project.about-section': ProjectAboutSection;
+      'project.after-before': ProjectAfterBefore;
+      'project.back-stage-section': ProjectBackStageSection;
+      'project.bottom-mail-to': ProjectBottomMailTo;
+      'project.carousel': ProjectCarousel;
+      'project.first-line': ProjectFirstLine;
+      'project.images-section': ProjectImagesSection;
+      'project.top-media': ProjectTopMedia;
+      'project.video-section': ProjectVideoSection;
+      'project.video': ProjectVideo;
+      'service-page.image': ServicePageImage;
+      'service-page.project-names': ServicePageProjectNames;
+      'service-page.projects': ServicePageProjects;
+      'service-page.service-item': ServicePageServiceItem;
+      'service-page.services-section': ServicePageServicesSection;
+      'service-page.services': ServicePageServices;
+      'service-page.studio-section': ServicePageStudioSection;
+      'service-page.top-section': ServicePageTopSection;
     }
   }
 }

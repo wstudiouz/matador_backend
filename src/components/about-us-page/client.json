@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_about_us_page_clients",
+  "info": {
+    "displayName": "client"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

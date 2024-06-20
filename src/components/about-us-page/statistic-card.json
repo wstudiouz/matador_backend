@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_us_page_statistic_cards",
+  "info": {
+    "displayName": "statisticCard"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "info": {
+      "type": "text"
+    }
+  }
+}

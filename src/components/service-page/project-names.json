@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_service_page_project_names",
+  "info": {
+    "displayName": "project-names"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "reuqired": true
+    }
+  }
+}

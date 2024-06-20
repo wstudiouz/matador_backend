@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_about_us_page_top_sections",
+  "info": {
+    "displayName": "topSection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionName": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "text"
+    },
+    "leftDescription": {
+      "type": "text"
+    },
+    "rightDescription": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

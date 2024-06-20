@@ -4,8 +4,7 @@
   "info": {
     "singularName": "header",
     "pluralName": "headers",
-    "displayName": "header",
-    "description": ""
+    "displayName": "header"
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +14,7 @@
     "navUrl": {
       "type": "component",
       "repeatable": false,
-      "component": "text-url.text-url",
+      "component": "footer.social-link",
       "required": true
     }
   }

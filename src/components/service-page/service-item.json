@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_service_page_service_items",
+  "info": {
+    "displayName": "serviceItem"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "btnText": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "topImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "bottomImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "projects": {
+      "displayName": "projects",
+      "type": "component",
+      "repeatable": false,
+      "component": "service-page.projects"
+    }
+  }
+}

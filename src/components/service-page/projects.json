@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_service_page_projects",
+  "info": {
+    "displayName": "projects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "projectNames": {
+      "displayName": "projectNames",
+      "type": "component",
+      "repeatable": true,
+      "component": "service-page.project-names"
+    }
+  }
+}

@@ -4,8 +4,7 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "homePage",
-    "description": ""
+    "displayName": "homePage"
   },
   "options": {
     "draftAndPublish": true
@@ -13,25 +12,24 @@
   "pluginOptions": {},
   "attributes": {
     "hero": {
-      "displayName": "homePageHero",
+      "displayName": "hero",
       "type": "component",
       "repeatable": false,
-      "component": "home-page-hero.home-page-hero",
+      "component": "home-page.hero",
       "required": true
     },
     "section": {
-      "displayName": "homeSection",
+      "displayName": "section",
       "type": "component",
       "repeatable": false,
-      "component": "home-section.home-section",
+      "component": "home-page.section",
       "required": true
     },
     "recentProjects": {
       "displayName": "recentProjects",
       "type": "component",
       "repeatable": false,
-      "component": "home-page-recent-projects.recent-projects",
-      "required": true
+      "component": "home-page.recent-projects"
     }
   }
 }
