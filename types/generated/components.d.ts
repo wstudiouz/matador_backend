@@ -301,20 +301,24 @@ export interface ServicePageProjectNames extends Schema.Component {
   collectionName: 'components_service_page_project_names';
   info: {
     displayName: 'project-names';
+    description: '';
   };
-  attributes: {
-    name: Attribute.String;
-  };
+  attributes: {};
 }
 
 export interface ServicePageProjects extends Schema.Component {
   collectionName: 'components_service_page_projects';
   info: {
     displayName: 'projects';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    projectNames: Attribute.Component<'service-page.project-names', true>;
+    projects: Attribute.Relation<
+      'service-page.projects',
+      'oneToMany',
+      'api::project.project'
+    >;
   };
 }
 

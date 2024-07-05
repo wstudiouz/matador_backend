@@ -1058,6 +1058,7 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
     singularName: 'service-page';
     pluralName: 'service-pages';
     displayName: 'servicePage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1079,6 +1080,36 @@ export interface ApiServicePageServicePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::service-page.service-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTalkToUsTalkToUs extends Schema.SingleType {
+  collectionName: 'talk_to_uses';
+  info: {
+    singularName: 'talk-to-us';
+    pluralName: 'talk-to-uses';
+    displayName: 'talkToUs';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::talk-to-us.talk-to-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::talk-to-us.talk-to-us',
       'oneToOne',
       'admin::user'
     > &
@@ -1112,6 +1143,7 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::project.project': ApiProjectProject;
       'api::service-page.service-page': ApiServicePageServicePage;
+      'api::talk-to-us.talk-to-us': ApiTalkToUsTalkToUs;
     }
   }
 }

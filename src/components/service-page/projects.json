@@ -1,18 +1,18 @@
 {
   "collectionName": "components_service_page_projects",
   "info": {
-    "displayName": "projects"
+    "displayName": "projects",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "projectNames": {
-      "displayName": "projectNames",
-      "type": "component",
-      "repeatable": true,
-      "component": "service-page.project-names"
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
     }
   }
 }

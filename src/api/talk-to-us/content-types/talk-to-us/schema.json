@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "talk_to_uses",
+  "info": {
+    "singularName": "talk-to-us",
+    "pluralName": "talk-to-uses",
+    "displayName": "talkToUs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}
